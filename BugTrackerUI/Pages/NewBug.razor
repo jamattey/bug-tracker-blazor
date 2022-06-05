@@ -13,7 +13,8 @@
 {
     [Inject]
     public IBugService BugService { get; set; }
-
+    
+    [Inject]
     public Bug AddBug { get; set; } = new Bug();
     public NavigationManager NavService { get; set; }
 
@@ -22,10 +23,8 @@
         BugService.AddBug(AddBug);
         NavService.NavigateTo("");
     }
-
-
 }
 
 
-        
+
 
