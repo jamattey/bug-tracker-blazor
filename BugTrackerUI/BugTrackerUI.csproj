@@ -7,6 +7,13 @@
 
   <ItemGroup>
     <Folder Include="Components\" />
+    <Folder Include="wwwroot\Components" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="Shared\BugList.razor">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>
