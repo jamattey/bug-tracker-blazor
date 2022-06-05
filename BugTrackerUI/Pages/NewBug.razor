@@ -2,22 +2,21 @@
 
 <h3>Add New Bug</h3>
 
-<EditForm OnInvalidSubmit="@HandleValidSubmit" Model="AddBug">
+<EditForm OnInvalidSubmit="HandleValidSubmit" Model="AddBug">
     <InputText @bind-Value="@AddBug.Title" placeholder="Enter Title" />
     <InputText @bind-Value="@AddBug.Description" placeholder="Enter Description" />
     <InputText @bind-value="@AddBug.Priority" placeholder="Enter Priority" />
     <button type="submit">Add Bug</button>
 </EditForm>
 
-@code
-{
+@code {
     [Inject]
     public IBugService BugService { get; set; }
     
     [Inject]
-    public Bug AddBug { get; set; } = new Bug();
     public NavigationManager NavService { get; set; }
-
+    public Bug AddBug { get; set; } = new Bug();
+    
     protected void HandleValidSubmit()
     {
         BugService.AddBug(AddBug);
