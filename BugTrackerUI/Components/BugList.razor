@@ -26,9 +26,8 @@
     public IBugService BugService { get; set; }
     public List<Bug> Bugs { get; set; }
 
-    protected void OnInitialized()
+    protected override void OnInitialized()
     {
         // orders the Bugs by their priority.
         Bugs = BugService.GetBugs().OrderBy(x => x.Priority).ToList();
     }
-}
