@@ -20,15 +20,13 @@ namespace BugTrackerUI
             Configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
+        public IConfiguration Configuration { get; set; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<IBugService, BugService>();
-            
-            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
